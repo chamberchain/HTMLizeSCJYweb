@@ -2,6 +2,8 @@
 // @name gcxycjtj
 // @namespace zbq
 // @include http://jiaowu.scetc.net/jiaoshi/cj/jshi/lu.asp*
+// @downloadURL  https://github.com/chamberchain/HTMLizeSCJYweb/raw/master/gcxytjcj.user.js
+// @updateURL  https://github.com/chamberchain/HTMLizeSCJYweb/raw/master/gcxytjcj.user.js
 // @version 1
 // @grant none
 // ==/UserScript==
