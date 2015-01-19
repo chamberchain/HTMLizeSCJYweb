@@ -1,0 +1,64 @@
+// ==UserScript==
+// @name        vocabu
+// @namespace  querywordsfrombaidu
+// @include     *
+// @exclude     *.sohu*
+// @exclude     *.baidu*
+// @exclude     *.taobao*
+// @exclude     *.tmall*
+// @exclude     *.jd.com*
+// @version     3.0
+// @grant       GM_xmlhttpRequest
+// @grant       GM_addStyle
+// @grant       unsafeWindow
+// ==/UserScript==
+//unsafeWindow.dict_query_word=function() {};
+window.addEventListener("mouseup",
+function(e){
+    if (!(!document.querySelector("#my_explanation"))){
+        return false;
+    }
+    //e.cancelBubble=true;
+    var divlen=document.querySelectorAll("div").length+1;
+    var sx=e.clientX;
+    var sy=e.clientY;
+    var aword=window.getSelection().toString().toLowerCase();
+    var vheight=document.documentElement.clientHeight;
+    var vwidth=document.documentElement.clientWidth;
+    if (aword.length>1){
+ GM_xmlhttpRequest({
+     method:"get",
+     url:"http://dict.baidu.com/s?wd="+aword,
+     onload:function(resp){
+         var p=resp.responseText.match(/<div\s*id=\"pronounce\">[\w\W]*?<\/div>/).toString(); 
+         if (!p){return false;}
+         p=p.replace(/<a.*?\/a>/gi,"");
+         var t=resp.responseText.match(/<div><p>.*?<\/p><\/div>/);
+         if (!t){t='未找到相关释义'}
+         var anewdiv=document.createElement("div");
+         anewdiv.setAttribute("id","my_explanation");
+         anewdiv.setAttribute("tabindex","-1");
+         anewdiv.innerHTML=p+t;
+         anewdiv.addEventListener("blur",
+                                  function(){
+                                      document.body.removeChild(anewdiv);
+                                  },true      
+         )
+         
+         document.body.appendChild(anewdiv);
+         var divh=anewdiv.clientHeight;
+         var divw=anewdiv.clientWidth;
+         var asx=((sx+divw)<vwidth)?sx:(vwidth-divw);
+         var asy=((sy+divh)>vheight)?(vheight-divh-15):sy;
+         //alert("x="+sx+"\ny="+asy);
+         var css1="#my_explanation{position:fixed;line-height:auto;font-size:9pt!important;background-color:yellow;left:"+asx;
+         css1=css1+"px;top:"+asy+"px;clear:both;padding:15px;;z-index:"+divlen+";}";
+         css1=css1+" #pronounce{clear:both;font-size:12pt;padding-bottom:15px;}";
+         GM_addStyle(css1);
+         anewdiv.focus();
+     } 
+ }) ;
+    }
+},
+true
+)
