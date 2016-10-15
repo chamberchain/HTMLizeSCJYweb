@@ -4,6 +4,7 @@
 // @description shit
 // @include     http://www.chiyin168.com/*
 // @exclude     http://www.chiyin168.com/Mall/*
+// @exclude     http://www.chiyin168.com/ShiPin/*
 // @version     1
 // @grant       none
 // ==/UserScript==
