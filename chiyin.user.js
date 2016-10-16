@@ -6,7 +6,7 @@
 // @exclude     http://www.chiyin168.com/ShiPin/*
 // @downloadURL		https://github.com/chamberchain/HTMLizeSCJYweb/raw/master/chiyin.user.js
 // @updateURL		https://github.com/chamberchain/HTMLizeSCJYweb/raw/master/chiyin.user.js
-// @version     1
+// @version     1.01
 // @grant       none
 // ==/UserScript==
 document.addEventListener('DOMContentLoaded', function (e) {
@@ -38,7 +38,7 @@ unsafeWindow.ShowTable = function (event) {
     if (data.msg === true) {
       var alink = document.createElement('a');
       alink.href = data.url;
-      alink.download = data.name;
+      alink.download = data.name.replace(/\./g," ");
       document.body.appendChild(alink);
       alink.click();
       document.body.removeChild(alink);
