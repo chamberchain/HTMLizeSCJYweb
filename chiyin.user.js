@@ -23,7 +23,7 @@ unsafeWindow.ShowTable = unsafeWindow.Getpath = function (event) {
       document.body.removeChild(alink);
       //make it still could play
       var player=document.querySelector("audio#custom-player");
-      if (player)){
+      if (player){
         document.body.removeChild(player);
       }
       var audio=document.createElement("audio");
