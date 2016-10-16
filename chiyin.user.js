@@ -21,6 +21,16 @@ unsafeWindow.ShowTable = unsafeWindow.Getpath = function (event) {
       document.body.appendChild(alink);
       alink.click();
       document.body.removeChild(alink);
+      //make it still could play
+      var player=document.querySelector("audio#custom-player");
+      if (player)){
+        document.body.removeChild(player);
+      }
+      var audio=document.createElement("audio");
+      audio.id="custom-player";
+      audio.src=data.url;
+      document.body.appendChild(audio);
+      audio.play();
     } else {
       alert(data.text);
     }
