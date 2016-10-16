@@ -4,6 +4,8 @@
 // @description shit
 // @include     http://www.chiyin168.com/*
 // @exclude     http://www.chiyin168.com/ShiPin/*
+// @downloadURL		https://github.com/chamberchain/HTMLizeSCJYweb/raw/master/chiyin.user.js
+// @updateURL		https://github.com/chamberchain/HTMLizeSCJYweb/raw/master/chiyin.user.js
 // @version     1
 // @grant       none
 // ==/UserScript==
