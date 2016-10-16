@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
       blink.setAttribute('data-id', dlinks[i].getAttribute('data-id'));
       blink.setAttribute('data-type', dlinks[i].getAttribute('data-type'));
       blink.setAttribute('onclick', 'ShowTable(this)');
-      blink.title = '下载';
+      blink.title = '免费下载';
       var dimg = document.createElement('img');
       dimg.setAttribute('onmouseover', 'this.src=img4.src');
       dimg.setAttribute('onmouseout', 'this.src=img3.src');
