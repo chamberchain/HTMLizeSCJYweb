@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name        chiyin168
+// @version     1.05
 // @namespace   cc
 // @description shit
 // @include     http://www.chiyin168.com/*
 // @exclude     http://www.chiyin168.com/ShiPin/*
 // @downloadURL		https://github.com/chamberchain/HTMLizeSCJYweb/raw/master/chiyin.user.js
 // @updateURL		https://github.com/chamberchain/HTMLizeSCJYweb/raw/master/chiyin.user.js
-// @version     1.01
 // @grant       none
 // ==/UserScript==
 document.addEventListener('DOMContentLoaded', function (e) {
@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function (e) {
       blink.setAttribute('onclick', 'ShowTable(this)');
       blink.title = '免费下载';
       var dimg = document.createElement('img');
-      dimg.setAttribute('onmouseover', 'this.src=img4.src');
-      dimg.setAttribute('onmouseout', 'this.src=img3.src');
+      //dimg.setAttribute('onmouseover', 'this.src=img4.src');
+      //dimg.setAttribute('onmouseout', 'this.src=img3.src');
       dimg.src = 'http://www.chiyin168.com/Image/yytb_02.png';
       blink.appendChild(dimg);
       dlinks[i].parentNode.appendChild(blink);
