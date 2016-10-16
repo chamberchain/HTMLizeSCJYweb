@@ -15,13 +15,6 @@ unsafeWindow.ShowTable = unsafeWindow.Getpath = function (event) {
     type: type
   }, function (data) {
     if (data.msg === true) {
-      var alink = document.createElement('a');
-      alink.href = data.url;
-      alink.download = data.name;
-      document.body.appendChild(alink);
-      alink.click();
-      document.body.removeChild(alink);
-      //make it still could play
       var player=document.querySelector("audio#custom-player");
       if (player){
         document.body.removeChild(player);
@@ -31,6 +24,12 @@ unsafeWindow.ShowTable = unsafeWindow.Getpath = function (event) {
       audio.src=data.url;
       document.body.appendChild(audio);
       audio.play();
+      var alink = document.createElement('a');
+      alink.href = data.url;
+      alink.download = data.name;
+      document.body.appendChild(alink);
+      alink.click();
+      document.body.removeChild(alink); 
     } else {
       alert(data.text);
     }
