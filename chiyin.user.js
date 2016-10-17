@@ -30,7 +30,7 @@ if (!!dlinks) {
 }
 });
 if (typeof(unsafeWindow)=="undefined"){
- var unsafeWindow=window;
+ var window=unsafeWindow;
 unsafeWindow.ShowTable = function (event) {
   var id = $(event).attr('data-id') || $(this).attr('data-id');
   var type = $(event).attr('data-type') || $(this).attr('data-type');
@@ -49,5 +49,5 @@ unsafeWindow.ShowTable = function (event) {
       alert(data.text);
     }
   }, 'json');
-}
 };
+}
