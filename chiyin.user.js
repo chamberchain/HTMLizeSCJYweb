@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        chiyin168
-// @version     1.1.1.2
+// @version     1.1.1.3
 // @namespace   cc
 // @description shit
 // @include     http://www.chiyin168.com/*
@@ -30,7 +30,8 @@ if (!!dlinks) {
 }
 });
 if (typeof(unsafeWindow)=="undefined"){
- var window=unsafeWindow;
+    window=unsafeWindow
+};
 unsafeWindow.ShowTable = function (event) {
   var id = $(event).attr('data-id') || $(this).attr('data-id');
   var type = $(event).attr('data-type') || $(this).attr('data-type');
@@ -50,4 +51,4 @@ unsafeWindow.ShowTable = function (event) {
     }
   }, 'json');
 };
-}
+
