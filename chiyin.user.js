@@ -29,7 +29,7 @@ if (!!dlinks) {
     }
 }
 });
-if (typeof(unsafeWindow)=="undefined){
+if (typeof(unsafeWindow)=="undefined"){
  var unsafeWindow=window;
 unsafeWindow.ShowTable = function (event) {
   var id = $(event).attr('data-id') || $(this).attr('data-id');
