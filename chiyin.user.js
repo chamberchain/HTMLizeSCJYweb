@@ -29,7 +29,7 @@ if (!!dlinks) {
     }
 }
 });
-window,ShowTable = function (event) {
+unsafeWindow.ShowTable = function (event) {
   var id = $(event).attr('data-id') || $(this).attr('data-id');
   var type = $(event).attr('data-type') || $(this).attr('data-type');
   $.post('/home/TrialSongs', {
