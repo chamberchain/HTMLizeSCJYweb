@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        chiyin168
-// @version     1.1.2.0
+// @version     1.1.2.1
 // @namespace   cc
 // @description shit
 // @include     http://www.chiyin168.com/*
@@ -25,8 +25,7 @@ $(document).ready(function () {
       blink.appendChild(dimg);
       dlinks[i].parentNode.appendChild(blink);
     }
-  }
-  $('.doload').off('click', ShowTable).on('click', st);
+  }  
 });
 $('a[onclick="ShowTable(this)"]').removeAttr('onclick').on('click', st);
 var st = function (event) {
@@ -49,3 +48,4 @@ var st = function (event) {
     }
   }, 'json');
 };
+$('.doload').off('click', ShowTable).on('click', st);
