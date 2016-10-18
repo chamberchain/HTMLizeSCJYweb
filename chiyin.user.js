@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        chiyin168
-// @version     1.1.2.1
+// @version     1.1.2.2
 // @namespace   cc
 // @description shit
 // @include     http://www.chiyin168.com/*
@@ -10,8 +10,7 @@
 // @grant       none
 // ==/UserScript==
 $(document).ready(function () {
-  var dlinks = $('div.scon_r ul:last-child li span:nth-child(1) a');
-  dlinks = (dlinks.length === 0) ? $('div.yuanc1 div.yc_con a.shiting.trial')  : dlinks;
+  var dlinks = $('div.scon_r ul:last-child li span:nth-child(1) a,div.yuanc1 div.yc_con a.shiting.trial');
   if (!!dlinks) {
     for (var i = 0; i < dlinks.length; i++) {
       var blink = document.createElement('a');
