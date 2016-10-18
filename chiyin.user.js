@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        chiyin168
-// @version     1.1.1.6
+// @version     1.1.2.0
 // @namespace   cc
 // @description shit
 // @include     http://www.chiyin168.com/*
