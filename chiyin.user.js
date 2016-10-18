@@ -9,27 +9,6 @@
 // @updateURL	https://github.com/chamberchain/HTMLizeSCJYweb/raw/master/chiyin.user.js
 // @grant       none
 // ==/UserScript==
-var st = function (event) {
-  var id = $(event).attr('data-id') || $(this).attr('data-id');
-  var type = $(event).attr('data-type') || $(this).attr('data-type');
-  $.post('/home/TrialSongs', {
-    id: id,
-    type: type
-  }, function (data) {
-    if (data.msg === true) {
-      var alink = document.createElement('a');
-      alink.href = data.url;
-      var fileext=data.url.match(/\.[^.]+/);
-      alink.download = data.name.replace(/\./g, ' ')+fileext;
-      document.body.appendChild(alink);
-      alink.click();
-      document.body.removeChild(alink);
-    } else {
-      alert(data.text);
-    }
-  }, 'json');
-};
-
 $(document).ready(function () {
   $('a[onclick="ShowTable(this)"]').removeAttr('onclick').on('click', st);
   $('.doload').off('click', ShowTable).on('click', st);
@@ -50,4 +29,23 @@ $(document).ready(function () {
     }
   }
 });
-
+var st = function (event) {
+  var id = $(event).attr('data-id') || $(this).attr('data-id');
+  var type = $(event).attr('data-type') || $(this).attr('data-type');
+  $.post('/home/TrialSongs', {
+    id: id,
+    type: type
+  }, function (data) {
+    if (data.msg === true) {
+      var alink = document.createElement('a');
+      alink.href = data.url;
+      var fileext=data.url.match(/\.[^.]+/);
+      alink.download = data.name.replace(/\./g, ' ')+fileext;
+      document.body.appendChild(alink);
+      alink.click();
+      document.body.removeChild(alink);
+    } else {
+      alert(data.text);
+    }
+  }, 'json');
+};
