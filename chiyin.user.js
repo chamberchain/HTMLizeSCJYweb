@@ -10,8 +10,6 @@
 // @grant       none
 // ==/UserScript==
 $(document).ready(function () {
-  $('a[onclick="ShowTable(this)"]').removeAttr('onclick').on('click', st);
-  $('.doload').off('click', ShowTable).on('click', st);
   var dlinks = $('div.scon_r ul:last-child li span:nth-child(1) a');
   dlinks = (dlinks.length === 0) ? $('div.yuanc1 div.yc_con a.shiting.trial')  : dlinks;
   if (!!dlinks) {
@@ -29,6 +27,8 @@ $(document).ready(function () {
     }
   }
 });
+$('a[onclick="ShowTable(this)"]').removeAttr('onclick').on('click', st);
+$('.doload').off('click', ShowTable).on('click', st);
 var st = function (event) {
   var id = $(event).attr('data-id') || $(this).attr('data-id');
   var type = $(event).attr('data-type') || $(this).attr('data-type');
