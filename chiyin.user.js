@@ -26,9 +26,9 @@ $(document).ready(function () {
       dlinks[i].parentNode.appendChild(blink);
     }
   }
+  $('.doload').off('click', ShowTable).on('click', st);
 });
 $('a[onclick="ShowTable(this)"]').removeAttr('onclick').on('click', st);
-$('.doload').off('click', ShowTable).on('click', st);
 var st = function (event) {
   var id = $(event).attr('data-id') || $(this).attr('data-id');
   var type = $(event).attr('data-type') || $(this).attr('data-type');
