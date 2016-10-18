@@ -21,6 +21,8 @@ $(document).ready(function () {
       blink.title = '免费下载';
       var dimg = document.createElement('img');
       dimg.src = 'http://www.chiyin168.com/Image/yytb_02.png';
+      dimg.setAttribute('onmouseover',"this.src='http://www.chiyin168.com/Image/yytb_06.png'");
+      dimg.setAttribute('onmouseout',"this.src='http://www.chiyin168.com/Image/yytb_02.png'");
       blink.appendChild(dimg);
       dlinks[i].parentNode.appendChild(blink);
     }
