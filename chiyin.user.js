@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        chiyin168
-// @version     1.1.2.4
+// @version     1.1.2.5
 // @namespace   cc
 // @description shit
 // @include     http://www.chiyin168.com/*
@@ -40,7 +40,9 @@ var st = function (event) {
       var alink = document.createElement('a');
       alink.href = data.url;
       alink.download = data.name.replace(/\./g, ' ')+data.url.match(/\.[^.]+/);
+      document.body.appendChild(alink);
       alink.click();
+      document.body.removeChild(alink);
     } else {
       alert(data.text);
     }
