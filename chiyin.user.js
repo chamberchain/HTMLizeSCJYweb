@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        chiyin168
-// @version     1.1.2.5
+// @version     1.1.3.0
 // @namespace   cc
 // @description shit
 // @include     http://www.chiyin168.com/*
@@ -14,7 +14,7 @@ $(document).ready(function () {
   if (!!dlinks) {
     for (var i = 0; i < dlinks.length; i++) {
       var blink = document.createElement('a');
-      blink.setAttribute('class', 'doload');
+      blink.setAttribute('onclick', 'ShowTable(this)');
       blink.href = '###';
       blink.setAttribute('data-id', dlinks[i].getAttribute('data-id'));
       blink.setAttribute('data-type', dlinks[i].getAttribute('data-type'));
