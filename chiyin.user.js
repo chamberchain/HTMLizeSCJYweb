@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name        chiyin168
-// @version     1.1.4.0
+// @version     1.1.4.1
 // @namespace   cc
 // @description shit
 // @include     http://www.chiyin168.com/*
 // @exclude     http://www.chiyin168.com/ShiPin/*
 // @downloadURL	https://github.com/chamberchain/HTMLizeSCJYweb/raw/master/chiyin.user.js
 // @updateURL	https://github.com/chamberchain/HTMLizeSCJYweb/raw/master/chiyin.user.js
-// @grant       none
+// @grant       unsafeWindow
 // ==/UserScript==
 $(document).ready(function () {
   var dlinks = $('div.scon_r ul:last-child li span:nth-child(1) a,div.yuanc1 div.yc_con a.shiting.trial');
@@ -28,7 +28,7 @@ $(document).ready(function () {
     }
   }
 });
-var st = function (event) {
+  unsafeWindow.ShowTable = function (event) {
   var id = $(event).attr('data-id') || $(this).attr('data-id');
   var type = $(event).attr('data-type') || $(this).attr('data-type');
   $.post('/home/TrialSongs', {
@@ -47,6 +47,6 @@ var st = function (event) {
     }
   }, 'json');
 };
- $('.doload').off('click', ShowTable).on('click', st);
-$('a[onclick="ShowTable(this)"]').removeAttr('onclick').on('click', st);
+// $('.doload').off('click', ShowTable).on('click', st);
+//$('a[onclick="ShowTable(this)"]').removeAttr('onclick').on('click', st);
 
